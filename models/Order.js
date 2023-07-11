@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 
 // Schema/Blueprint
-const courseSchema = new mongoose.Schema({
+const orderSchema = new mongoose.Schema({
 
     userId: {
         type: mongoose.Schema.Types.ObjectId,
@@ -33,4 +33,4 @@ const courseSchema = new mongoose.Schema({
 	},
 
 });
-module.exports = mongoose.model('Course', courseSchema);
+module.exports = mongoose.model('Order', orderSchema);

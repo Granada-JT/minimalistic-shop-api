@@ -1,8 +1,5 @@
-// Mongoose Dependency
 const mongoose = require('mongoose');
 
-
-// Schema/Blueprint
 const productSchema = new mongoose.Schema({
 
 	name: {

@@ -1,4 +1,4 @@
-// Dependencies and Modules
+// Importing the required dependencies and modules
 const express = require('express');
 const userController = require('../controllers/user');
 const auth = require('../auth');
@@ -7,16 +7,16 @@ const Product = require("../models/Product");
 const Order = require("../models/Order");
 const router = express.Router();
 
-// Destructure the auth file:
+
 const { verify, verifyAdmin } = auth;
 
-// Route for checking if user email already exists
+// This route is for checking if the user email already exists.
 router.post("/checkEmail", userController.checkEmailExists)
 
-// Route for user registration
+// This route is for user registration
 router.post('/registration', userController.registerUser)
 
-// Route for user autentication
+// This route is for logging in the user and for generating his/her bearer/access token.
 router.post("/login", userController.loginUser);
 
 

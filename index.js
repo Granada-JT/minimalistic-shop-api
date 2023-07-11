@@ -16,11 +16,8 @@ const port = 4000;
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-// Allows all resources(frontend app) to access our backend application.
 app.use(cors());
 
-
-// Mongoose Connection
 mongoose.connect("mongodb+srv://joG:admin123@b295.gdrdocw.mongodb.net/capstone2-Ecommerce-API?retryWrites=true&w=majority",
 		{
 			useNewUrlParser: true,
@@ -40,10 +37,10 @@ db.once('open', () => console.log('Connected to MongoDB Atlas.'));
 app.use("/users", userRoutes);
 
 // Group all product routes
-// app.use("/products", productRoutes);
+app.use("/products", productRoutes);
 
 // Group all order routes
-// app.use("/orders", orderRoutes);
+app.use("/orders", orderRoutes);
 
 
 

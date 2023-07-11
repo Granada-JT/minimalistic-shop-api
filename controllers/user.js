@@ -1,11 +1,11 @@
-// Dependencies and Modules
+// Imports required dependencies and modules.
 const auth = require("../auth");
 const bcrypt = require('bcrypt');
 const User = require("../models/User");
 const Product = require("../models/Product")
 const Order = require("../models/Order")
 
-// Function for checking if user email already exists
+// This function is for checking if the user email already exists.
 module.exports.checkEmailExists = (req, res) => {
 	return User.find({email: req.body.email}).then(result => 
         {
@@ -18,7 +18,7 @@ module.exports.checkEmailExists = (req, res) => {
     )
 };
 
-// User Registration Function
+// This function is for user registration.
 module.exports.registerUser = (req, res) => {
 	let newUser = new User({
 		firstName: req.body.firstName,
@@ -36,7 +36,7 @@ module.exports.registerUser = (req, res) => {
 	}) .catch(err => res.send(err));
 };
 
-// User Authentication Function
+// This function is for logging in the user and for generating his/her own bearer/access token.
 module.exports.loginUser = (req, res) => {
 	return User.findOne({email: req.body.email}).then(result => {
 		console.log(result)

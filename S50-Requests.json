@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "3771ddbf-78ed-445c-b77a-c902f60c2315",
+		"name": "S50-Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27719350"
+	},
+	"item": [
+		{
+			"name": "createProduct route",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWQ3MjY2Mzc0MWIxNzIyNmYzYzI4MyIsImVtYWlsIjoieWFlQG1haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjg5MDg4NzQ1fQ.Jd37o5LiYr8bVUKSf3bFxvbJE9-Bb7MBi0Xv-7TIN7U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Song of Broken Pines\",\r\n    \"description\": \"A greatsword as light as the sigh of grass in the breeze, yet as merciless to the corrupt as a typhoon.\",\r\n    \"price\": \"25000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/products/createProduct",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"products",
+						"createProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retrieveAllProducts route",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/products/allProducts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"products",
+						"allProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retrieveAllActiveProducts route Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/products/allActiveProducts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"products",
+						"allActiveProducts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
