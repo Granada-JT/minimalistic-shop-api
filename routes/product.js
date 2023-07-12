@@ -15,6 +15,19 @@ router.get("/allProducts", productController.retrieveAllProducts)
 // This route is for retrieving all active products.
 router.get("/allActiveProducts", productController.allActiveProducts)
 
+// This route is for retrieving a single product.
+router.get("/:productId", productController.retrieveProduct)
+
+// This route is for updating a product's information
+router.put("/:productId/updateProduct", verify, verifyAdmin, productController.updateProduct)
+
+// This route is for archiving a product.
+router.put("/:productId/archiveProduct", verify, verifyAdmin, productController.archiveProduct)
+
+// This route is for activating a product.
+router.put("/:productId/activateProduct", verify, verifyAdmin, productController.activateProduct)
+
+
 
 
 
