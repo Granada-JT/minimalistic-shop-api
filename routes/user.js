@@ -19,7 +19,8 @@ router.post('/registration', userController.registerUser)
 // This route is for logging in the user and for generating his/her bearer/access token.
 router.post("/login", userController.loginUser);
 
-
+// This route is for retrieving user details
+router.get("/userDetails", verify, userController.getUserDetails)
 
 
 

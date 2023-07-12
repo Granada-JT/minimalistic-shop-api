@@ -53,3 +53,13 @@ module.exports.loginUser = (req, res) => {
 		}
 	}).catch(err => res.send(err));
 };
+
+// This function is for retrieving user details
+module.exports.getUserDetails = (req, res) => {
+	return User.findById(req.user.id).then(result => {
+		result.password = "";
+		return res.send(result)
+	})
+	.catch(err => res.send(err))
+};
+

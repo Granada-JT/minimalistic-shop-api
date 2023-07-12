@@ -1,19 +1,16 @@
-// Mongoose Dependency
 const mongoose = require('mongoose');
 
-
-// Schema/Blueprint
 const orderSchema = new mongoose.Schema({
 
     userId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: 'User',
         required: [true, 'User ID required']
       },
     products: [
 		{
 			productId: {
-				type: mongoose.Schema.Types.ObjectId,
+				type: String,
                 ref: 'Product',
 				required: [true, 'Product ID is required']
 			},

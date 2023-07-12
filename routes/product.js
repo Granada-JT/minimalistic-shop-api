@@ -6,7 +6,7 @@ const router = express.Router();
 
 const { verify, verifyAdmin } = auth;
 
-// This route is for creating a productl
+// This route is for creating a product.
 router.post("/createProduct", verify, verifyAdmin, productController.createProduct)
 
 // This route is for retrieving all products.

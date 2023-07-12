@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "b8dd3740-6a99-4eeb-917b-1b1fe83bedb4",
+		"name": "S52-Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27719350"
+	},
+	"item": [
+		{
+			"name": "createOrder route",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWRmN2M1ZTFhYzAxZDU3MTkwMDJmMSIsImVtYWlsIjoiYXlha2FAbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjg5MTI4NjgxfQ.tv7W0Zozqxtr8xgEQPx-wOc69R0_lCo6HHrNX3pHpx4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productName\": \"Mistsplitter Reforged\",\r\n    \"quantity\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/orders/createOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"orders",
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserDetails route",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/users/userDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"userDetails"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
