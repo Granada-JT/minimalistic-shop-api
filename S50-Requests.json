@@ -14,7 +14,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWQ3MjY2Mzc0MWIxNzIyNmYzYzI4MyIsImVtYWlsIjoieWFlQG1haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjg5MDg4NzQ1fQ.Jd37o5LiYr8bVUKSf3bFxvbJE9-Bb7MBi0Xv-7TIN7U",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWQ3MjY2Mzc0MWIxNzIyNmYzYzI4MyIsImVtYWlsIjoieWFlQG1haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjg5MTczNTM5fQ.tM2Qh3xcn0rnAtwFPYKI2dIe4h9fUsaBN0VmawCS4qw",
 							"type": "string"
 						}
 					]
@@ -23,7 +23,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Song of Broken Pines\",\r\n    \"description\": \"A greatsword as light as the sigh of grass in the breeze, yet as merciless to the corrupt as a typhoon.\",\r\n    \"price\": \"25000\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Waster Greatsword\",\r\n    \"description\": \"A sturdy sheet of iron that may be powerful enough to break apart mountains if wielded with enough willpower.\",\r\n    \"price\": \"10\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -31,15 +31,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/products/createProduct",
+					"raw": "http://localhost:4000/products",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "4000",
 					"path": [
-						"products",
-						"createProduct"
+						"products"
 					]
 				}
 			},
@@ -51,7 +50,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/products/allProducts",
+					"raw": "http://localhost:4000/products/all",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -59,7 +58,7 @@
 					"port": "4000",
 					"path": [
 						"products",
-						"allProducts"
+						"all"
 					]
 				}
 			},
@@ -68,18 +67,27 @@
 		{
 			"name": "retrieveAllActiveProducts route Copy",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWQ3MjY2Mzc0MWIxNzIyNmYzYzI4MyIsImVtYWlsIjoieWFlQG1haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjg5MTc1MzA4fQ.hpQwfztHrbwSL_3Ade0RljPffNhurUByPzNf-RsJRNw",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/products/allActiveProducts",
+					"raw": "http://localhost:4000/products",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "4000",
 					"path": [
-						"products",
-						"allActiveProducts"
+						"products"
 					]
 				}
 			},

@@ -7,13 +7,13 @@ const router = express.Router();
 const { verify, verifyAdmin } = auth;
 
 // This route is for creating a product.
-router.post("/createProduct", verify, verifyAdmin, productController.createProduct)
+router.post("/", verify, verifyAdmin, productController.createProduct)
 
 // This route is for retrieving all products.
-router.get("/allProducts", productController.retrieveAllProducts)
+router.get("/all", productController.retrieveAllProducts)
 
 // This route is for retrieving all active products.
-router.get("/allActiveProducts", productController.allActiveProducts)
+router.get("/", verify, verifyAdmin, productController.allActiveProducts)
 
 // This route is for retrieving a single product.
 router.get("/:productId", productController.retrieveProduct)

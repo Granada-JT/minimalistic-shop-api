@@ -71,7 +71,7 @@ module.exports.verifyAdmin = (req, res, next) => {
 	} else {
 		return res.send({
 			auth: "Failed",
-			message: "Action Forbidden"
+			message: "Authentication failed. You are not authorized to perform this action."
 		})
 	}
 }

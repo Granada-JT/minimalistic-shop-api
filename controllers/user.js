@@ -38,7 +38,7 @@ module.exports.registerUser = (req, res) => {
 
 // This function is for logging in the user and for generating his/her own bearer/access token.
 module.exports.loginUser = (req, res) => {
-    User.findOne({ email: req.body.email }).then(result => {
+    return User.findOne({ email: req.body.email }).then(result => {
         if (result == null) {
             return res.send("Email is incorrect, please try again.");
         } else {
@@ -90,7 +90,7 @@ module.exports.updateToAdmin = (req, res) => {
 	if (req.body.id.length !== 24) {
 		return res.send(`Invalid user ID, please try again.`);
 	}
-    User.findById(req.body.id).then(result => {
+    return User.findById(req.body.id).then(result => {
         if (result == null) {
             return res.send("This user is not found");
         }
@@ -117,7 +117,7 @@ module.exports.updateToAdmin = (req, res) => {
 
 // This function retrieves the logged in user's orders.
 module.exports.getOrders = (req, res) => {
-    User.findById(req.user.id)
+    return User.findById(req.user.id)
         .then(result => {
             if (result.isAdmin) {
                 return res.send("This user is an admin, placing orders is prohibited.");
