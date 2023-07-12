@@ -44,6 +44,35 @@ module.exports.createOrder = (req, res) => {
     });
 };
 
+// This function retrieves all orders/
+module.exports.getAllOrders = (req, res) => {
+    
+    return Order.find({}).then((orders) => {
+        // Calculate the total number of unique users in the orders array
+        const uniqueUsers = [...new Set(orders.map(order => order.userId))].length;
+
+        // Calculate the total product quantity
+        const totalQuantity = orders.reduce((sum, order) => {
+            return sum + order.products.reduce((productSum, product) => {
+             return productSum + (product.quantity || 0);
+            }, 0);
+
+        }, 0);
+
+        // Calculate the total amount for all orders
+        const totalAmount = orders.reduce((sum, order) => {
+            return sum + order.totalAmount;
+        }, 0);
+
+        return res.send(
+            `Total number of orders: ${orders.length} \n Total number of unique users who placed an order: ${uniqueUsers} \n Total product quantity: ${totalQuantity} \n Total amount for all the orders: ${totalAmount}
+            \n All Orders: \n ${orders}`
+        );
+
+    }).catch(err => res.send(err));
+
+};
+
 
 
 
