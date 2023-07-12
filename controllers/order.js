@@ -37,7 +37,7 @@ module.exports.createOrder = (req, res) => {
             if (error) {
                 return res.send("Error, the order was not created");
             } else {
-                return res.send(`Successful!, The ${product.name} is available, order created. Thank you!, Here is a summary of your order:
+                return res.send(`Successful!, The "${product.name}" is available, order created. Thank you!, Here is a summary of your order:
                 ${order}`);
             }
         }).catch(err => res.send(err));

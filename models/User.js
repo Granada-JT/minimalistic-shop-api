@@ -25,23 +25,6 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		required: [true, 'Mobile Number is required.']
 	},
-/* 	orders: [
-		{
-			orderId: {
-				type: String,
-				required: [true, 'Order ID is required.']
-			},
-			orderedOn: {
-				type: Date,
-				default: new Date()
-			},
-			status: {
-				type: String,
-				default: 'Enrolled'
-			}
-		}
-	]
- */
 });
 
 module.exports = mongoose.model('User', userSchema);
