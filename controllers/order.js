@@ -6,7 +6,7 @@ const Product = require("../models/Product");
 
 // This function finds if a product name provided by the user matches a product name in the database and if the product is active, if a match is found and a quantity is provided it will then create an order.
 module.exports.createOrder = (req, res) => {
-    Product.findOne({ name: req.body.productName, isActive: true}).then(product => {
+    Product.findOne({ _id: req.body.productId, isActive: true}).then(product => {
 
         // This if statement checks if the product exists in the database
         if (!product) {

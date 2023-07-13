@@ -1,4 +1,4 @@
-// Imports required dependencies and modules.
+// Imports the required dependencies and modules.
 const express = require('express');
 const auth = require('../auth');
 const productController = require('../controllers/product');

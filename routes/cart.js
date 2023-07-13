@@ -1,7 +1,7 @@
 // Imports the required dependencies and modules.
 const express = require('express');
 const auth = require('../auth');
-const orderController = require('../controllers/order');
+const cartController = require('../controllers/cart');
 const router = express.Router();
 
 const { verify, verifyAdmin } = auth;

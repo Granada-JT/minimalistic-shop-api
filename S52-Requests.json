@@ -23,7 +23,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"productName\": \"Mistsplitter Reforged\",\r\n    \"quantity\": 3\r\n}",
+					"raw": "{\r\n    \"productId\": \"64adf839e1ac01d5719002f3\",\r\n    \"quantity\": 5\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
