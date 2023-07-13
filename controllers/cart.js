@@ -122,5 +122,3 @@ module.exports.changeQuantity = (req, res) => {
             res.status(500).send(false);
         });
 };
-
-  
