@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const User = require("../models/User");
 const Order = require("../models/Order");
 
-// This function is for checking if the user email already exists.
+// This function checks if the user email provided already exists.
 module.exports.checkEmailExists = (req, res) => {
 	return User.find({email: req.body.email}).then(result => 
         {
@@ -17,7 +17,7 @@ module.exports.checkEmailExists = (req, res) => {
     )
 };
 
-// This function is for user registration.
+// This function registers a unique user if a duplicate property is not found in the database.
 module.exports.registerUser = (req, res) => {
     let newUser = new User({
         firstName: req.body.firstName,
@@ -60,7 +60,7 @@ module.exports.loginUser = (req, res) => {
     }).catch(err => res.send(err));
 };
 
-// This function is for retrieving user details
+// This function retrieves user details and hides the password for security.
 module.exports.getUserDetails = (req, res) => {
 	return User.findById(req.user.id).then(result => {
 		result.password = "";
@@ -69,7 +69,7 @@ module.exports.getUserDetails = (req, res) => {
 	.catch(err => res.send(err))
 };
 
-// This function is for resetting the password of an individual user.
+// This function is for resets the password of a registered user.
 module.exports.resetPassword = async (req, res) => {
     try {
         const { newPassword } = req.body;

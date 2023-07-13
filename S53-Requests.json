@@ -143,6 +143,75 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "addToCart route",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWU2NTdkYTdhZDNmYzA1YmVmNDY4MiIsImVtYWlsIjoibW9uYUBtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2ODkyNjM3Njl9.s3lsMSOiDBRO1IEGqH57_MFXKGucd_77PvNgU0ouYww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/cart/addToCart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"cart",
+						"addToCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changeQuantity route",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWU2NTdkYTdhZDNmYzA1YmVmNDY4MiIsImVtYWlsIjoibW9uYUBtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2ODkyNjM3Njl9.s3lsMSOiDBRO1IEGqH57_MFXKGucd_77PvNgU0ouYww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": \"64ae6509a7ad3fc05bef467e\",\r\n    \"quantity\": \"20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/cart/changeQuantity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"cart",
+						"changeQuantity"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

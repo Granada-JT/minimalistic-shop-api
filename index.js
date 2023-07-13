@@ -5,13 +5,13 @@ const cors = require('cors');
 const userRoutes = require("./routes/user");
 const productRoutes = require("./routes/product")
 const orderRoutes = require("./routes/order")
+const cartRoutes = require("./routes/cart")
 
 // Server Setup
 const app = express();
 
 // Environment Setup
 const port = 4000;
-
 
 // Middlewares
 app.use(express.json());
@@ -25,12 +25,10 @@ mongoose.connect("mongodb+srv://joG:admin123@b295.gdrdocw.mongodb.net/capstone2-
 		}
 	);
 
-
 let db = mongoose.connection;
 
 db.on('error', console.error.bind(console,'Connection error'));
 db.once('open', () => console.log('Connected to MongoDB Atlas.'));
-
 
 // Backend Routes
 // http://localhost:4000/users
@@ -42,7 +40,8 @@ app.use("/products", productRoutes);
 // Group all order routes
 app.use("/orders", orderRoutes);
 
-
+// Group all cart routes
+app.use("/cart", cartRoutes);
 
 // Server Gateway Response
 
@@ -50,10 +49,4 @@ if(require.main === module) {
 	app.listen(process.env.PORT || port, () => { console.log(`Server is now running in port ${process.env.PORT || port}.`)});
 };
 
-
-
-
 module.exports = {app, mongoose};
-
-
-
