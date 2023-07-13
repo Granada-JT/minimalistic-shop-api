@@ -12,9 +12,4 @@ router.post("/createOrder", verify, orderController.createOrder)
 // This route is for retrieving all orders.
 router.get("/allOrders", verify, verifyAdmin, orderController.getAllOrders)
 
-
-
-
-
-
 module.exports = router;

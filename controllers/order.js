@@ -1,14 +1,12 @@
 // Imports the required dependencies and modules.
-const auth = require('../auth');
 const Order = require("../models/Order");
-const User = require('../models/User');
 const Product = require("../models/Product");
 
-// This function finds if a product name provided by the user matches a product name in the database and if the product is active, if a match is found and a quantity is provided it will then create an order.
+// This function finds if a product id provided by the user matches a product id in the database and if the product is active, if a match is found and a quantity is provided, it will then create an order.
 module.exports.createOrder = (req, res) => {
     Product.findOne({ _id: req.body.productId, isActive: true}).then(product => {
 
-        // This if statement checks if the product exists in the database
+        // This if statement checks if the product exists in the database.
         if (!product) {
             return res.send(false);
         }
@@ -28,7 +26,7 @@ module.exports.createOrder = (req, res) => {
             products: [{
                 productId: product.id,
 
-                // The user will input how many product/s needs to be ordered.
+                // The user will input the number of product/s needs to be ordered.
                 quantity: req.body.quantity,
                 productName: product.name
             }],
@@ -48,7 +46,7 @@ module.exports.createOrder = (req, res) => {
     });
 };
 
-// This function retrieves all orders/
+// This function retrieves all orders.
 module.exports.getAllOrders = (req, res) => {
     
     return Order.find({}).then((orders) => {
@@ -58,12 +56,3 @@ module.exports.getAllOrders = (req, res) => {
     }).catch(err => res.send(err));
 
 };
-
-
-
-
-
-
-
-
-

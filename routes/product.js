@@ -18,7 +18,7 @@ router.get("/", productController.allActiveProducts)
 // This route is for retrieving a single product.
 router.get("/:productId", productController.retrieveProduct)
 
-// This route is for updating a product's information
+// This route is for updating a product's information.
 router.put("/:productId/updateProduct", verify, verifyAdmin, productController.updateProduct)
 
 // This route is for archiving a product.
@@ -26,9 +26,5 @@ router.put("/:productId/archiveProduct", verify, verifyAdmin, productController.
 
 // This route is for activating a product.
 router.put("/:productId/activateProduct", verify, verifyAdmin, productController.activateProduct)
-
-
-
-
 
 module.exports = router;

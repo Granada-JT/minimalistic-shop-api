@@ -22,18 +22,6 @@ const productSchema = new mongoose.Schema({
 		type: Date,
 		default: new Date()
 	},
-/* 	sellers: [
-		{
-			userId: {
-				type: String,
-				required: [true, 'Seller's ID is required']
-			},
-			postedOn: {
-				type: Date,
-				default: new Date()
-			}
-		}
-	] */
-
 });
+
 module.exports = mongoose.model('Product', productSchema);
