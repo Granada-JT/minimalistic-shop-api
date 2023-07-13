@@ -22,7 +22,7 @@ router.post("/login", userController.loginUser);
 // This route is for retrieving user details
 router.get("/userDetails", verify, userController.getUserDetails)
 
-// This route is for retting the password of a single user.
+// This route is for resetting the password of a single user.
 router.put("/reset-password", verify, userController.resetPassword)
 
 // This route is for updating a non-admin user to an admin.

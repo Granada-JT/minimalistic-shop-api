@@ -23,7 +23,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Waster Greatsword\",\r\n    \"description\": \"A sturdy sheet of iron that may be powerful enough to break apart mountains if wielded with enough willpower.\",\r\n    \"price\": \"10\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Harbinger of Dawn\",\r\n    \"description\": \"A sword that once shone like the sun. The wielder of this sword will be blessed with a feel-good buff. The reflective material of the blade has long worn off.\",\r\n    \"price\": \"15000\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -47,6 +47,16 @@
 		{
 			"name": "retrieveAllProducts route",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWRmN2M1ZTFhYzAxZDU3MTkwMDJmMSIsImVtYWlsIjoiYXlha2FAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODkyMTYwNjl9.FEsrkbPTrT2giVxPLom5WZZrcSGecA_hH_xj9OILezw",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -72,7 +82,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWQ3MjY2Mzc0MWIxNzIyNmYzYzI4MyIsImVtYWlsIjoieWFlQG1haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjg5MTc1MzA4fQ.hpQwfztHrbwSL_3Ade0RljPffNhurUByPzNf-RsJRNw",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWRmN2M1ZTFhYzAxZDU3MTkwMDJmMSIsImVtYWlsIjoiYXlha2FAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODkyMTYwNjl9.FEsrkbPTrT2giVxPLom5WZZrcSGecA_hH_xj9OILezw",
 							"type": "string"
 						}
 					]

@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "getProduct route",
+			"name": "retrieveProduct route",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -34,7 +34,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWQ3MjY2Mzc0MWIxNzIyNmYzYzI4MyIsImVtYWlsIjoieWFlQG1haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjg5MTIzMDYzfQ.rvY-nX7RPtXgo3LQVl5nWsM2pSSj7MnzM4c3ubHzuYQ",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWRmN2M1ZTFhYzAxZDU3MTkwMDJmMSIsImVtYWlsIjoiYXlha2FAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODkyMTYwNjl9.FEsrkbPTrT2giVxPLom5WZZrcSGecA_hH_xj9OILezw",
 							"type": "string"
 						}
 					]
@@ -42,7 +42,7 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/products/64ad7473b95a5789c6e385ba/archiveProduct",
+					"raw": "http://localhost:4000/products/64aebef9bccf73673c788b3f/archiveProduct",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -50,7 +50,7 @@
 					"port": "4000",
 					"path": [
 						"products",
-						"64ad7473b95a5789c6e385ba",
+						"64aebef9bccf73673c788b3f",
 						"archiveProduct"
 					]
 				}
@@ -65,7 +65,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWQ3MjY2Mzc0MWIxNzIyNmYzYzI4MyIsImVtYWlsIjoieWFlQG1haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjg5MTIzMDYzfQ.rvY-nX7RPtXgo3LQVl5nWsM2pSSj7MnzM4c3ubHzuYQ",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWRmN2M1ZTFhYzAxZDU3MTkwMDJmMSIsImVtYWlsIjoiYXlha2FAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODkyMTYwNjl9.FEsrkbPTrT2giVxPLom5WZZrcSGecA_hH_xj9OILezw",
 							"type": "string"
 						}
 					]
@@ -73,7 +73,7 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/products/64ad7473b95a5789c6e385ba/activateProduct",
+					"raw": "http://localhost:4000/products/64aebef9bccf73673c788b3f/activateProduct",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -81,7 +81,7 @@
 					"port": "4000",
 					"path": [
 						"products",
-						"64ad7473b95a5789c6e385ba",
+						"64aebef9bccf73673c788b3f",
 						"activateProduct"
 					]
 				}
@@ -96,7 +96,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWQ3MjY2Mzc0MWIxNzIyNmYzYzI4MyIsImVtYWlsIjoieWFlQG1haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjg5MTIzMDYzfQ.rvY-nX7RPtXgo3LQVl5nWsM2pSSj7MnzM4c3ubHzuYQ",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWRmN2M1ZTFhYzAxZDU3MTkwMDJmMSIsImVtYWlsIjoiYXlha2FAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODkyMTYwNjl9.FEsrkbPTrT2giVxPLom5WZZrcSGecA_hH_xj9OILezw",
 							"type": "string"
 						}
 					]

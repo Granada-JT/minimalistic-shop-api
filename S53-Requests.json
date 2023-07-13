@@ -62,7 +62,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": \"64adf7c5e1ac01d5719002f1\"\r\n}",
+					"raw": "{\r\n    \"id\": \"64ad1c178128765c792bfe33\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -85,14 +85,14 @@
 			"response": []
 		},
 		{
-			"name": "getOrders route",
+			"name": "retrieveOrders route",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWU2NTdkYTdhZDNmYzA1YmVmNDY4MiIsImVtYWlsIjoibW9uYUBtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2ODkxNTEyODJ9.9VtyXcuWb_6aetu24fmzJA89ni4yI5LKXbPM4uhc7ok",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWU2NTdkYTdhZDNmYzA1YmVmNDY4MiIsImVtYWlsIjoibW9uYUBtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2ODkyMTQ1MDN9.z9jnY10mPC5rzEytTVqLVKyB8vJIoixhSEGIi1Wb-o4",
 							"type": "string"
 						}
 					]
@@ -109,6 +109,36 @@
 					"path": [
 						"users",
 						"getOrders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retrieveAllOrders route",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWQ3MjY2Mzc0MWIxNzIyNmYzYzI4MyIsImVtYWlsIjoieWFlQG1haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjg5MTc2ODM4fQ.fxZ2HSG0pQhZQ-ZypcmO8dXLZID5MtyFK9J-MwDpYw0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/orders/allOrders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"orders",
+						"allOrders"
 					]
 				}
 			},

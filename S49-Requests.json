@@ -21,13 +21,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/checkEmail",
+					"raw": "http://localhost:4000/users/checkEmail",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "4000",
 					"path": [
+						"users",
 						"checkEmail"
 					]
 				}
@@ -41,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"eula@mail.com\"\r\n}",
+					"raw": "{\r\n\t\"firstName\": \"Kuki\",\r\n\t\"lastName\": \"Shinobu\",\r\n\t\"email\": \"shinobu@mail.com\",\r\n\t\"mobileNo\": \"098624856\",\r\n\t\"password\": \"kukiganda\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -49,27 +50,28 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/checkEmail",
+					"raw": "http://localhost:4000/users/registration",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "4000",
 					"path": [
-						"checkEmail"
+						"users",
+						"registration"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "registerUser route Copy",
+			"name": "loginUser route",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"eula@mail.com\"\r\n}",
+					"raw": "{\r\n    \"email\": \"shinobu@mail.com\",\r\n    \"password\": \"kukiganda\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -77,14 +79,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/checkEmail",
+					"raw": "http://localhost:4000/users/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "4000",
 					"path": [
-						"checkEmail"
+						"users",
+						"login"
 					]
 				}
 			},

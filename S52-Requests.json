@@ -14,7 +14,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWRmN2M1ZTFhYzAxZDU3MTkwMDJmMSIsImVtYWlsIjoiYXlha2FAbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjg5MTI4NjgxfQ.tv7W0Zozqxtr8xgEQPx-wOc69R0_lCo6HHrNX3pHpx4",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWY1MDU2YmI5OTNlZmVjMzI4MGIxYyIsImVtYWlsIjoic2hpbm9idUBtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2ODkyMjEwMTd9.6xuCIidkuw2UpGf8eZ9firpCUVogCzYdntvcRkmSaNM",
 							"type": "string"
 						}
 					]
@@ -23,7 +23,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"productName\": \"Mistsplitter Reforged\",\r\n    \"quantity\": 5\r\n}",
+					"raw": "{\r\n    \"productName\": \"Mistsplitter Reforged\",\r\n    \"quantity\": 3\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -48,6 +48,16 @@
 		{
 			"name": "getUserDetails route",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWU2MzAzYTdhZDNmYzA1YmVmNDY3NyIsImVtYWlsIjoia29rb21pQG1haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY4OTIxMTY1Nn0._A-D8QMLJcVxNIJ4wB6NghZXZkh2CyfVyErPvdQd76o",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
