@@ -120,36 +120,40 @@ module.exports.changeQuantity = (req, res) => {
         });
 };
 
-// This function removes a specific item from the cart.
+// This function removes a specific item from the cart with its associated order from the database by finding the provided productId. 
 module.exports.removeItem = (req, res) => {
   const userId = req.user.id;
   const cartItemId = req.body.productId;
 
-  // This code block finds the cart document based on the user ID
+  // This code block finds if the cart exists based on the user ID.
   Cart.findOne({ userId: userId })
       .then((cart) => {
           if (!cart) {
               return res.send(false);
           }
 
-          // This code block finds the cart item within the cart.
+          // This code block finds if the cart item or the product exists within the cart.
           const cartItemIndex = cart.cartItems.findIndex((item) => item.productId === cartItemId);
-
-          // This code block checks if the cart item exists.
           if (cartItemIndex === -1) {
               return res.send(false);
           }
 
           // This code block removes the cart item from the cart.
-          cart.cartItems.splice(cartItemIndex, 1);
+          const removedCartItem = cart.cartItems.splice(cartItemIndex, 1)[0];
 
-          // This code block/function recalculates the total price.
-          cart.totalPrice = calculateTotalPrice(cart.cartItems);
+          // This code block removes the associated order from the database.
+          return Order.findByIdAndRemove(removedCartItem.orderId)
+            .then(() => {
 
-          // This code block saves the updated cart document.
-          return cart.save().then(() => {
+              // This code block/function recalculates the total price.
+              cart.totalPrice = calculateTotalPrice(cart.cartItems);
+
+              // This method saves the updated cart document.
+              return cart.save();
+            })
+            .then(() => {
               res.send(true);
-          });
+            });
       })
       .catch((err) => {
           console.error(err);
