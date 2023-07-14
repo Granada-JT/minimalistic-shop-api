@@ -212,6 +212,43 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "removeitem route",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWU2NTdkYTdhZDNmYzA1YmVmNDY4MiIsImVtYWlsIjoibW9uYUBtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2ODkyOTQ3NTZ9.ItRZkf7Q_e69V7eyjMGnyrva2KJGJmWtsjh6B6xbi6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": \"64ae64bda7ad3fc05bef467c\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/cart/removeItem",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cart",
+						"removeItem"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

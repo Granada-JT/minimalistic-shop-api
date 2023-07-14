@@ -1,15 +1,12 @@
 // Imports the required dependencies and modules.
-const auth = require('../auth');
 const Order = require("../models/Order");
-const User = require('../models/User');
-const Product = require("../models/Product");
 const Cart = require("../models/Cart");
 
-// This function will automatically add user's order into the cart
+// This function automatically adds a user's order into the cart.
 module.exports.addToCart = (req, res) => {
     const userId = req.user.id;
 
-    // Find the orderIds based on the userId
+    //This code block finds the orderIds based on their userId.
     Order.find({ userId: userId })
       .then((orders) => {
         if (orders.length === 0) {
@@ -121,4 +118,41 @@ module.exports.changeQuantity = (req, res) => {
             console.error(err);
             res.status(500).send(false);
         });
+};
+
+// This function removes a specific item from the cart.
+module.exports.removeItem = (req, res) => {
+  const userId = req.user.id;
+  const cartItemId = req.body.productId;
+
+  // This code block finds the cart document based on the user ID
+  Cart.findOne({ userId: userId })
+      .then((cart) => {
+          if (!cart) {
+              return res.send(false);
+          }
+
+          // This code block finds the cart item within the cart.
+          const cartItemIndex = cart.cartItems.findIndex((item) => item.productId === cartItemId);
+
+          // This code block checks if the cart item exists.
+          if (cartItemIndex === -1) {
+              return res.send(false);
+          }
+
+          // This code block removes the cart item from the cart.
+          cart.cartItems.splice(cartItemIndex, 1);
+
+          // This code block/function recalculates the total price.
+          cart.totalPrice = calculateTotalPrice(cart.cartItems);
+
+          // This code block saves the updated cart document.
+          return cart.save().then(() => {
+              res.send(true);
+          });
+      })
+      .catch((err) => {
+          console.error(err);
+          res.status(500).send(false);
+      });
 };

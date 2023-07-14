@@ -12,8 +12,8 @@ router.post("/addToCart", verify, cartController.addToCart)
 // This route is for changing the product quantities
 router.put("/changeQuantity", verify, cartController.changeQuantity)
 
-
-
+// This route is for removing items from the cart.
+router.delete("/removeItem", verify, cartController.removeItem)
 
 
 
