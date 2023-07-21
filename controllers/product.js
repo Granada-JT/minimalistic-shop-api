@@ -46,7 +46,7 @@ module.exports.createProduct = (req, res) => {
 // This function retrieves all products.
 module.exports.retrieveAllProducts = (req,res) => {
     return Product.find({}).then(result => {
-        return res.send(result)
+        return res.json(result)
     })
     .catch(err => res.send(err))
 };
@@ -54,7 +54,7 @@ module.exports.retrieveAllProducts = (req,res) => {
 // This function retrieves all active products.
 module.exports.allActiveProducts = (req,res) => {
     return Product.find({isActive: true}).then(result => {
-        return res.send(result)
+        return res.json(result)
     })
     .catch(err => res.send(err))
 };

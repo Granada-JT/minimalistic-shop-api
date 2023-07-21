@@ -10,7 +10,7 @@ const { verify, verifyAdmin } = auth;
 router.post("/", verify, verifyAdmin, productController.createProduct)
 
 // This route is for retrieving all products.
-router.get("/all", verify, verifyAdmin, productController.retrieveAllProducts)
+router.get("/all", productController.retrieveAllProducts)
 
 // This route is for retrieving all active products.
 router.get("/", productController.allActiveProducts)
