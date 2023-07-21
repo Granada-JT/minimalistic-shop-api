@@ -29,13 +29,13 @@ module.exports.registerUser = (req, res) => {
 
     return newUser.save()
         .then((user) => {
-            return res.send(true);
+            return res.json({access: true});
         })
         .catch((error) => {
 
             // This if statement checks if a duplicate property is found.
             if (error.code === 11000) {
-                return res.send(false);
+                return res.json({access: false});
             } else {
                 return res.send(error);
             }
@@ -52,7 +52,7 @@ module.exports.loginUser = (req, res) => {
 
             if (isPasswordCorrect) {
                 const accessToken = auth.createAccessToken(result);
-                return res.send(accessToken);
+                return res.json({ access: accessToken});
             } else {
                 return res.send(false);
             }
