@@ -78,7 +78,7 @@ module.exports.updateProduct = (req, res) => {
     }
 
     // This if statement checks if the provided price is negative.
-    if (req.body.price < 0) {
+    if (req.body.price <= 0) {
         return res.send(false);
     } 
 
@@ -91,8 +91,7 @@ module.exports.updateProduct = (req, res) => {
     return Product.findOne({
         $or: [
             { name: req.body.name },
-            { description: req.body.description },
-            { price: req.body.price }
+            { description: req.body.description }
         ],
         _id: { $ne: req.params.productId }
     }).then(existingProduct => {
