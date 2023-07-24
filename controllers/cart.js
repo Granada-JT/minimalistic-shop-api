@@ -10,7 +10,7 @@ module.exports.addToCart = (req, res) => {
     Order.find({ userId: userId })
       .then((orders) => {
         if (orders.length === 0) {
-          return res.send("No orders found for the user");
+          return res.send(false);
         }
   
         const orderIds = orders.map((order) => order._id);
@@ -23,7 +23,7 @@ module.exports.addToCart = (req, res) => {
               .populate('products.productId')
               .then((order) => {
                 if (!order) {
-                  return res.send("Order not found");
+                  return res.send(false);
                 }
   
                 const product = order.products[0].productId;
@@ -160,3 +160,33 @@ module.exports.removeItem = (req, res) => {
           res.status(500).send(false);
       });
 };
+
+// This function retrieves the cart details from the database.
+// This function retrieves the cart details from the database.
+module.exports.getCart = (req, res) => {
+  console.log("GET CART REQUEST RECEIVED");
+  const userId = req.user.id;
+
+  Cart.findOne({ userId })
+    .sort({ addedOn: -1 })
+    .populate('cartItems.productId')
+    .exec()
+    .then((cart) => {
+      console.log("CART RETRIEVED FROM DATABASE:", cart);
+      if (!cart) {
+        return res.send([]);
+      }
+
+      // Prevent caching for this specific API endpoint
+      res.set('Cache-Control', 'no-store');
+
+      return res.json(cart);
+    })
+    .catch((err) => {
+      console.error("ERROR GETTING CART:", err);
+      res.status(500).send(false);
+    });
+};
+
+
+
