@@ -27,4 +27,7 @@ router.put("/:productId/archiveProduct", verify, verifyAdmin, productController.
 // This route is for activating a product.
 router.put("/:productId/activateProduct", verify, verifyAdmin, productController.activateProduct)
 
+// This route is for searching for products by name.
+router.post('/search', productController.searchProductsByName);
+
 module.exports = router;

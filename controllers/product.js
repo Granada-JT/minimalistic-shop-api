@@ -170,3 +170,19 @@ module.exports.activateProduct = (req, res) => {
 
     });
 };
+
+module.exports.searchProductsByName = async (req, res) => {
+	try {
+	  const { courseName } = req.body;
+  
+	  // Use a regular expression to perform a case-insensitive search
+	  const courses = await Course.find({
+		name: { $regex: courseName, $options: 'i' }
+	  });
+  
+	  res.json(courses);
+	} catch (error) {
+	  console.error(error);
+	  res.status(500).json({ error: 'Internal Server Error' });
+	}
+  };

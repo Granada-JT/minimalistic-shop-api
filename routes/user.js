@@ -18,6 +18,9 @@ router.post("/login", userController.loginUser);
 // This route is for retrieving user details.
 router.get("/userDetails", verify, userController.getUserDetails)
 
+// Update user profile route
+router.put('/profile', verify, userController.updateProfile);
+
 // This route is for resetting the password of a single user.
 router.put("/reset-password", verify, userController.resetPassword)
 
