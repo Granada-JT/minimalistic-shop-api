@@ -16,7 +16,8 @@ module.exports.createProduct = (req, res) => {
             let createdProduct = new Product({
                 name: req.body.name,
                 description: req.body.description,
-                price: req.body.price
+                price: req.body.price,
+                imgSrc: req.body.imgSrc
             });
 
             // This if statement prohibits the input/creation of a negative price.
@@ -25,7 +26,7 @@ module.exports.createProduct = (req, res) => {
             }
 
             // This if statement checks if there are no or falsy user input for the properties.
-            if (!req.body.name || !req.body.description || !req.body.price) {
+            if (!req.body.name || !req.body.description || !req.body.price || !req.body.imgSrc) {
                 return res.send(false);
             }
 
@@ -74,7 +75,8 @@ module.exports.updateProduct = (req, res) => {
     let updatedProduct = {
         name: req.body.name,
         description: req.body.description,
-        price: req.body.price
+        price: req.body.price,
+        imgSrc: req.body.imgSrc
     }
 
     // This if statement checks if the provided price is negative.

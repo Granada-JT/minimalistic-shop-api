@@ -18,6 +18,10 @@ const productSchema = new mongoose.Schema({
 		type: Boolean,
 		default: true
 	},
+	imgSrc: {
+		type: String,
+    	required: [true, 'Image source is required.']
+	},
 	createdOn: {
 		type: Date,
 		default: new Date()
