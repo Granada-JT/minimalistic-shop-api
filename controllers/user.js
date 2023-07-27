@@ -3,6 +3,7 @@ const auth = require("../auth");
 const bcrypt = require('bcrypt');
 const User = require("../models/User");
 const Order = require("../models/Order");
+const Checkout = require("../models/Checkout");
 
 // This function checks if the user email provided already exists.
 module.exports.checkEmailExists = (req, res) => {
@@ -175,3 +176,16 @@ module.exports.updateProfile = async (req, res) => {
 	  res.status(500).json({ message: 'Failed to update profile' });
 	}
   }
+
+  module.exports.getCheckout = (req, res) => {
+
+	return Checkout.findOne({
+        userId: req.user.id
+    }).then((checkout) => {
+
+            console.log(checkout)
+			return res.json(checkout);
+		
+  
+	  }).catch(err => res.send(err));
+  };
