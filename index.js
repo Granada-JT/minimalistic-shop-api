@@ -6,6 +6,7 @@ const userRoutes = require("./routes/user");
 const productRoutes = require("./routes/product")
 const orderRoutes = require("./routes/order")
 const cartRoutes = require("./routes/cart")
+const checkoutRoutes = require("./routes/checkout")
 
 // Server Setup
 const app = express();
@@ -42,6 +43,9 @@ app.use("/orders", orderRoutes);
 
 // Group all cart routes
 app.use("/cart", cartRoutes);
+
+// Group all checkout routes
+app.use("/checkout", checkoutRoutes);
 
 // Server Gateway Response
 

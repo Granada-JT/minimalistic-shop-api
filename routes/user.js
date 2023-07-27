@@ -30,4 +30,8 @@ router.put ("/updateToAdmin", verify, verifyAdmin, userController.updateToAdmin)
 // This route is for retrieving authenticated user's details.
 router.get("/getOrders", verify, userController.getOrders)
 
+// This route is for retriening the authenticated user's checkedout orders.
+
+router.get("/getCheckout", verify, userController.getCheckout)
+
 module.exports = router;
