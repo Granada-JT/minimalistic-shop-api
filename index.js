@@ -7,19 +7,18 @@ const productRoutes = require("./routes/product")
 const orderRoutes = require("./routes/order")
 const cartRoutes = require("./routes/cart")
 const checkoutRoutes = require("./routes/checkout")
+const dotenv = require('dotenv')
+dotenv.config()
 
 // Server Setup
 const app = express();
-
-// Environment Setup
-const port = 4000;
 
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors());
 
-mongoose.connect("mongodb+srv://joG:admin123@b295.gdrdocw.mongodb.net/capstone2-Ecommerce-API?retryWrites=true&w=majority",
+mongoose.connect(process.env.MONGODB_URI,
 		{
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
@@ -50,7 +49,7 @@ app.use("/checkout", checkoutRoutes);
 // Server Gateway Response
 
 if(require.main === module) {
-	app.listen(process.env.PORT || port, () => { console.log(`Server is now running in port ${process.env.PORT || port}.`)});
+	app.listen(process.env.PORT, () => { console.log(`Server is now running in port ${process.env.PORT}.`)});
 };
 
 module.exports = {app, mongoose};
