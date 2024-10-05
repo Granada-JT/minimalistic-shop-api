@@ -1,37 +1,37 @@
 // Imports the required dependencies and modules.
-const express = require('express');
-const userController = require('../controllers/user');
-const auth = require('../auth');
+const express = require("express");
+const userController = require("../controllers/user");
+const auth = require("../auth");
 const router = express.Router();
 
 const { verify, verifyAdmin } = auth;
 
 // This route is for checking if the user email already exists.
-router.post("/checkEmail", userController.checkEmailExists)
+router.post("/checkEmail", userController.checkEmailExists);
 
 // This route is for user registration.
-router.post('/registration', userController.registerUser)
+router.post("/registration", userController.registerUser);
 
 // This route is for logging in the user and for generating his/her bearer/access token.
 router.post("/login", userController.loginUser);
 
 // This route is for retrieving user details.
-router.get("/userDetails", verify, userController.getUserDetails)
+router.get("/userDetails", verify, userController.getUserDetails);
 
 // Update user profile route
-router.put('/profile', verify, userController.updateProfile);
+router.put("/profile", verify, userController.updateProfile);
 
 // This route is for resetting the password of a single user.
-router.put("/reset-password", verify, userController.resetPassword)
+router.put("/reset-password", verify, userController.resetPassword);
 
 // This route is for updating a non-admin user to an admin.
-router.put ("/updateToAdmin", verify, verifyAdmin, userController.updateToAdmin)
+router.put("/updateToAdmin", verify, verifyAdmin, userController.updateToAdmin);
 
 // This route is for retrieving authenticated user's details.
-router.get("/getOrders", verify, userController.getOrders)
+router.get("/getOrders", verify, userController.getOrders);
 
 // This route is for retriening the authenticated user's checkedout orders.
 
-router.get("/getCheckout", verify, userController.getCheckout)
+router.get("/getCheckout", verify, userController.getCheckout);
 
 module.exports = router;

@@ -1,38 +1,40 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const checkoutSchema = new mongoose.Schema({
   userId: {
     type: String,
-    ref: 'User',
+    ref: "User",
   },
   isPaid: {
     type: Boolean,
-    default: false
+    default: false,
   },
   paymentMethod: {
     type: String,
-    required: true
+    required: true,
   },
   checkoutDate: {
     type: Date,
-    default: new Date()
+    default: new Date(),
   },
-  checkedOutItems: [{
-    orderId: {
+  checkedOutItems: [
+    {
+      orderId: {
         type: String,
-        ref: 'Order',
-        required: [true, 'Order ID required']
-    },
-    productId: {
+        ref: "Order",
+        required: [true, "Order ID required"],
+      },
+      productId: {
         type: String,
-        ref: 'Product',
-        required: [true, 'Product ID required']
+        ref: "Product",
+        required: [true, "Product ID required"],
+      },
     },
-  }],
+  ],
   priceToBePaid: {
     type: Number,
-    required: true
-  }
+    required: true,
+  },
 });
 
-module.exports = mongoose.model('Checkout', checkoutSchema);
+module.exports = mongoose.model("Checkout", checkoutSchema);
