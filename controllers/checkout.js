@@ -7,9 +7,6 @@ module.exports.checkoutOrder = (req, res) => {
     "cartItems._id": req.body.cartItemId,
   })
     .then((cart) => {
-      // This if statement checks if the product exists in the database.
-      console.log(req.body);
-      console.log(cart);
       if (!cart) {
         return res.send("Cart not found");
       }
@@ -24,7 +21,6 @@ module.exports.checkoutOrder = (req, res) => {
       );
 
       if (!cartItem) {
-        console.log(cartItem);
         return res.send("CartItem not found");
       }
 
@@ -42,20 +38,18 @@ module.exports.checkoutOrder = (req, res) => {
         priceToBePaid: cartItem.subTotal,
       });
 
-      // This return statement saves the newly created order to the database.
       return checkout
         .save()
-        .then((savedCheckout) => {
-          console.log(savedCheckout);
+        .then(() => {
           return res.json(true);
         })
         .catch((error) => {
-          console.log(error);
+          console.error(error);
           return res.json(false);
         });
     })
     .catch((err) => {
-      console.log(err);
+      console.error(err);
       return res.json(false);
     });
 };
