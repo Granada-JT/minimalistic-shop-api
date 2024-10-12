@@ -182,8 +182,10 @@ module.exports.getCheckout = (req, res) => {
     userId: req.user.id,
   })
     .then((checkout) => {
-      console.log(checkout);
       return res.json(checkout);
     })
-    .catch((err) => res.send(err));
+    .catch((err) => {
+      console.error(err)
+      res.send(err)
+    });
 };

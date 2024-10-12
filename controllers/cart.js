@@ -106,7 +106,6 @@ module.exports.changeQuantity = (req, res) => {
       }
 
       cartItem.quantity = newQuantity;
-      console.log(productPrice);
       cartItem.subTotal = productPrice * newQuantity;
 
       cart.totalPrice = calculateTotalPrice(cart.cartItems);
@@ -164,9 +163,7 @@ module.exports.removeItem = (req, res) => {
 };
 
 // This function retrieves the cart details from the database.
-// This function retrieves the cart details from the database.
 module.exports.getCart = (req, res) => {
-  console.log("GET CART REQUEST RECEIVED");
   const userId = req.user.id;
 
   Cart.findOne({ userId })
@@ -174,7 +171,6 @@ module.exports.getCart = (req, res) => {
     .populate("cartItems.productId")
     .exec()
     .then((cart) => {
-      console.log("CART RETRIEVED FROM DATABASE:", cart);
       if (!cart) {
         return res.send([]);
       }
