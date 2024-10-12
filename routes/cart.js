@@ -4,7 +4,7 @@ const cartController = require("../controllers/cart");
 const router = express.Router();
 const cors = require("cors");
 
-const { verify, verifyAdmin } = auth;
+const { verify } = auth;
 
 // This route is for adding orders into the cart
 router.post("/addToCart", verify, cartController.addToCart);

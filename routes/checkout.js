@@ -3,7 +3,7 @@ const auth = require("../auth");
 const checkoutController = require("../controllers/checkout");
 const router = express.Router();
 
-const { verify, verifyAdmin } = auth;
+const { verify } = auth;
 
 router.post("/", verify, checkoutController.checkoutOrder);
 

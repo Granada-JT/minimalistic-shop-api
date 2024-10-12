@@ -28,7 +28,7 @@ module.exports.registerUser = (req, res) => {
 
   return newUser
     .save()
-    .then((user) => {
+    .then(() => {
       return res.json({ access: true });
     })
     .catch((error) => {
@@ -99,6 +99,7 @@ module.exports.resetPassword = async (req, res) => {
     await User.findByIdAndUpdate(id, { password: hashedPassword });
     res.status(200).send(true);
   } catch (error) {
+    console.error(error);
     res.status(500).send(false);
   }
 };
@@ -185,7 +186,7 @@ module.exports.getCheckout = (req, res) => {
       return res.json(checkout);
     })
     .catch((err) => {
-      console.error(err)
-      res.send(err)
+      console.error(err);
+      res.send(err);
     });
 };
