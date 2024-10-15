@@ -21,11 +21,11 @@ module.exports.verify = (req, res, next) => {
     token = token.slice(7, token.length);
   }
 
-  jwt.verify(token, process.env.JWT_SECRET, function (err, decodedToken) {
-    if (err) {
+  jwt.verify(token, process.env.JWT_SECRET, function (error, decodedToken) {
+    if (error) {
       return res.send({
         auth: "Failed",
-        message: err.message,
+        message: error.message,
       });
     } else {
       req.user = decodedToken;

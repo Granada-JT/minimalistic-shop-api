@@ -46,8 +46,8 @@ module.exports.checkoutOrder = (req, res) => {
           return res.json(false);
         });
     })
-    .catch((err) => {
-      console.error(err);
+    .catch((error) => {
+      console.error(error);
       return res.json(false);
     });
 };

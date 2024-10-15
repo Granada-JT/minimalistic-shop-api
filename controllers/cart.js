@@ -35,8 +35,8 @@ module.exports.addToCart = (req, res) => {
 
               cartItems.push(cartItem);
             })
-            .catch((err) => {
-              console.error(err);
+            .catch((error) => {
+              console.error(error);
               res.status(500).send(false);
             }),
         ),
@@ -52,13 +52,13 @@ module.exports.addToCart = (req, res) => {
             res.send(true);
           });
         })
-        .catch((err) => {
-          console.error(err);
+        .catch((error) => {
+          console.error(error);
           res.status(500).send(false);
         });
     })
-    .catch((err) => {
-      console.error(err);
+    .catch((error) => {
+      console.error(error);
       res.status(500).send(false);
     });
 };
@@ -106,8 +106,8 @@ module.exports.changeQuantity = (req, res) => {
         res.send(true);
       });
     })
-    .catch((err) => {
-      console.error(err);
+    .catch((error) => {
+      console.error(error);
       res.status(500).send(false);
     });
 };
@@ -141,8 +141,8 @@ module.exports.removeItem = (req, res) => {
           res.send(true);
         });
     })
-    .catch((err) => {
-      console.error(err);
+    .catch((error) => {
+      console.error(error);
       res.status(500).send(false);
     });
 };
@@ -158,14 +158,12 @@ module.exports.getCart = (req, res) => {
       if (!cart) {
         return res.send([]);
       }
-
-      // Prevent caching for this specific API endpoint
       res.set("Cache-Control", "no-store");
 
       return res.json(cart);
     })
-    .catch((err) => {
-      console.error("ERROR GETTING CART:", err);
+    .catch((error) => {
+      console.error("ERROR GETTING CART:", error);
       res.status(500).send(false);
     });
 };
