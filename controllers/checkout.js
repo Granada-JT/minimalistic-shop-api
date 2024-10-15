@@ -1,7 +1,6 @@
 const Cart = require("../models/Cart");
 const Checkout = require("../models/Checkout");
 
-// Checkout Function
 module.exports.checkoutOrder = (req, res) => {
   Cart.findOne({
     "cartItems._id": req.body.cartItemId,
@@ -11,7 +10,6 @@ module.exports.checkoutOrder = (req, res) => {
         return res.send("Cart not found");
       }
 
-      // This if statement checks if the user is an admin or not, if an admin is detected, he/she will not be allowed to create an order.
       if (req.user.isAdmin) {
         return res.send(false);
       }

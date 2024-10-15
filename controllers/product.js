@@ -43,7 +43,6 @@ module.exports.createProduct = (req, res) => {
     });
 };
 
-// This function retrieves all products.
 module.exports.retrieveAllProducts = (req, res) => {
   return Product.find({})
     .then((result) => {
@@ -52,7 +51,6 @@ module.exports.retrieveAllProducts = (req, res) => {
     .catch((err) => res.send(err));
 };
 
-// This function retrieves all active products.
 module.exports.allActiveProducts = (req, res) => {
   return Product.find({ isActive: true })
     .then((result) => {
@@ -61,7 +59,6 @@ module.exports.allActiveProducts = (req, res) => {
     .catch((err) => res.send(err));
 };
 
-// This function retrieves a single product.
 module.exports.retrieveProduct = (req, res) => {
   return Product.findById(req.params.productId)
     .then((result) => {
@@ -70,9 +67,7 @@ module.exports.retrieveProduct = (req, res) => {
     .catch((err) => res.send(err));
 };
 
-// This function updates a product's information
 module.exports.updateProduct = (req, res) => {
-  // This code block captures the user input for the values of the properties that the user wishes to update.
   let updatedProduct = {
     name: req.body.name,
     description: req.body.description,
@@ -134,7 +129,6 @@ module.exports.archiveProduct = (req, res) => {
     });
 };
 
-// This function activates a product.
 module.exports.activateProduct = (req, res) => {
   return Product.findById(req.params.productId)
     .then((existingProduct) => {
