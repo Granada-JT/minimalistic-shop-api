@@ -32,20 +32,15 @@ db.once("open", () => console.log("Connected to MongoDB Atlas."));
 // http://localhost:4000/users
 app.use("/users", userRoutes);
 
-// Group all product routes
 app.use("/products", productRoutes);
 
-// Group all order routes
 app.use("/orders", orderRoutes);
 
-// Group all cart routes
 app.use("/cart", cartRoutes);
 
-// Group all checkout routes
 app.use("/checkout", checkoutRoutes);
 
 // Server Gateway Response
-
 if (require.main === module) {
   app.listen(process.env.PORT, () => {
     console.log(`Server is now running in port ${process.env.PORT}.`);
