@@ -33,12 +33,14 @@ module.exports.createProduct = (req, res) => {
           .then(() => {
             return res.send(true);
           })
-          .catch(() => {
+          .catch((error) => {
+            console.error(error)
             return res.send(false);
           });
       }
     })
-    .catch(() => {
+    .catch((error) => {
+      console.error(error)
       return res.send(false);
     });
 };
@@ -48,7 +50,7 @@ module.exports.retrieveAllProducts = (req, res) => {
     .then((result) => {
       return res.json(result);
     })
-    .catch((err) => res.send(err));
+    .catch((error) => res.send(error));
 };
 
 module.exports.allActiveProducts = (req, res) => {
@@ -56,7 +58,7 @@ module.exports.allActiveProducts = (req, res) => {
     .then((result) => {
       return res.json(result);
     })
-    .catch((err) => res.send(err));
+    .catch((error) => res.send(error));
 };
 
 module.exports.retrieveProduct = (req, res) => {
@@ -64,7 +66,7 @@ module.exports.retrieveProduct = (req, res) => {
     .then((result) => {
       return res.send(result);
     })
-    .catch((err) => res.send(err));
+    .catch((error) => res.send(error));
 };
 
 module.exports.updateProduct = (req, res) => {

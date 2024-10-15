@@ -38,7 +38,7 @@ module.exports.createOrder = (req, res) => {
             return res.send(true);
           }
         })
-        .catch((err) => res.send(err));
+        .catch((error) => console.error(error));
     },
   );
 };
@@ -48,5 +48,5 @@ module.exports.getAllOrders = (req, res) => {
     .then((orders) => {
       return res.send(orders);
     })
-    .catch((err) => res.send(err));
+    .catch((error) => console.error(error));
 };

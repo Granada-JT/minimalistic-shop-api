@@ -56,7 +56,7 @@ module.exports.loginUser = (req, res) => {
         }
       }
     })
-    .catch((err) => res.send(err));
+    .catch((error) => res.send(error));
 };
 
 module.exports.getUserDetails = (req, res) => {
@@ -65,7 +65,7 @@ module.exports.getUserDetails = (req, res) => {
       result.password = "";
       return res.send(result);
     })
-    .catch((err) => res.send(err));
+    .catch((error) => res.send(error));
 };
 
 module.exports.resetPassword = async (req, res) => {
@@ -114,7 +114,7 @@ module.exports.updateToAdmin = (req, res) => {
         });
       }
     })
-    .catch((err) => res.send(err));
+    .catch((error) => res.send(error));
 };
 
 module.exports.getOrders = (req, res) => {
@@ -131,10 +131,10 @@ module.exports.getOrders = (req, res) => {
               return res.send(orders);
             }
           })
-          .catch((err) => res.send(err));
+          .catch((error) => res.send(error));
       }
     })
-    .catch((err) => res.send(err));
+    .catch((error) => res.send(error));
 };
 
 module.exports.updateProfile = async (req, res) => {
@@ -162,8 +162,8 @@ module.exports.getCheckout = (req, res) => {
     .then((checkout) => {
       return res.json(checkout);
     })
-    .catch((err) => {
-      console.error(err);
-      res.send(err);
+    .catch((error) => {
+      console.error(error);
+      res.send(error);
     });
 };
