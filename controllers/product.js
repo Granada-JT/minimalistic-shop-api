@@ -102,7 +102,8 @@ module.exports.updateProduct = (req, res) => {
           return res.send(false);
         });
     })
-    .catch(() => {
+    .catch((error) => {
+      console.error(error)
       return res.send(false);
     });
 };
@@ -126,7 +127,8 @@ module.exports.archiveProduct = (req, res) => {
           });
       }
     })
-    .catch(() => {
+    .catch((error) => {
+      console.error(error)
       return res.send(false);
     });
 };
@@ -150,7 +152,8 @@ module.exports.activateProduct = (req, res) => {
           });
       }
     })
-    .catch(() => {
+    .catch((error) => {
+      console.error(error)
       return res.send(false);
     });
 };

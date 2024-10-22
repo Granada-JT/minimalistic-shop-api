@@ -5,13 +5,17 @@ const Order = require("../models/Order");
 const Checkout = require("../models/Checkout");
 
 module.exports.checkEmailExists = (req, res) => {
-  return User.find({ email: req.body.email }).then((result) => {
-    if (result.length > 0) {
-      return res.send(true);
-    } else {
-      return res.send(false);
-    }
-  });
+  return User.find({ email: req.body.email })
+    .then((result) => {
+      if (result.length > 0) {
+        return res.send(true);
+      } else {
+        return res.send(false);
+      }
+    })
+    .catch((error) => 
+      console.error(error)
+    )
 };
 
 module.exports.registerUser = (req, res) => {
@@ -29,6 +33,7 @@ module.exports.registerUser = (req, res) => {
       return res.json({ access: true });
     })
     .catch((error) => {
+      console.error(error)
       if (error.code === 11000) {
         return res.json({ access: false });
       } else {
@@ -56,7 +61,10 @@ module.exports.loginUser = (req, res) => {
         }
       }
     })
-    .catch((error) => res.send(error));
+    .catch((error) => {
+      console.error(error)
+      res.send(error)
+    });
 };
 
 module.exports.getUserDetails = (req, res) => {
@@ -65,7 +73,10 @@ module.exports.getUserDetails = (req, res) => {
       result.password = "";
       return res.send(result);
     })
-    .catch((error) => res.send(error));
+    .catch((error) => {
+      console.error(error)
+      res.send(error)
+    });
 };
 
 module.exports.resetPassword = async (req, res) => {
@@ -114,7 +125,10 @@ module.exports.updateToAdmin = (req, res) => {
         });
       }
     })
-    .catch((error) => res.send(error));
+    .catch((error) => {
+      console.error(error)
+      res.send(error)
+    });
 };
 
 module.exports.getOrders = (req, res) => {
@@ -131,10 +145,16 @@ module.exports.getOrders = (req, res) => {
               return res.send(orders);
             }
           })
-          .catch((error) => res.send(error));
+          .catch((error) => {
+            console.error(error)
+            res.send(error)
+          });
       }
     })
-    .catch((error) => res.send(error));
+    .catch((error) => {
+      console.error(error)
+      res.send(error)
+    });
 };
 
 module.exports.updateProfile = async (req, res) => {
